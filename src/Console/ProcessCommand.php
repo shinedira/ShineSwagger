@@ -5,6 +5,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Route;
 use ReflectionMethod;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class ProcessCommand extends Command
 {
@@ -109,7 +110,8 @@ class ProcessCommand extends Command
                 foreach ($parameters as $parameter) {
                     $type = optional($parameter->getType())->getName() ?? null;
 
-                    if (class_exists($type) && ($request = new $type) instanceof FormRequest ) {
+                    if (class_exists($type) && ($request = new $type) instanceof Request ) {
+                        if (class_exists($type) && $request instanceof FormRequest ) {
                             foreach ($request->rules() as $key => $rule) {
 
                                 $path['requestBody']['description'] = 'Parameter for ' . $method;
@@ -123,6 +125,7 @@ class ProcessCommand extends Command
                                 ];
 
                             }
+                        }
                     } else {
                         $path['parameters'][] = [
                             'name' => $parameter->name,
