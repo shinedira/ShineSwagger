@@ -17,5 +17,12 @@
         "psr-4": {
             "Shinedira\\ShineSwagger\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shinedira\\ShineSwagger\\ShineSwaggerProvider"
+            ]
+        }
     }
 }
