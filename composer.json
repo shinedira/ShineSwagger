@@ -1,0 +1,21 @@
+{
+    "name": "shinedira/shine-swagger",
+    "description": "This will generate swagger Open Api Spesification",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shinedira",
+            "email": "shinedira@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/yaml": "^5.0@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Shinedira\\ShineSwagger\\": "src/"
+        }
+    }
+}
