@@ -21,5 +21,5 @@ Run command
 php artisan generate:api-docs
 ```
 
-see the result on http://base_url/api/docs
+### see the result on http://base_url/api/docs
 
